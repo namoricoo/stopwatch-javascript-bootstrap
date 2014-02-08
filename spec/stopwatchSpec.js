@@ -1,3 +1,6 @@
 describe("Stopwatch", function() {
-	var time;
+	var stopwatch;
+	beforeEach(function() {
+		stopwatch = new Stopwatch();
+	});
 });
