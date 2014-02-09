@@ -1,2 +1,2 @@
-function Stopwatch() {
-}
+var Stopwatch = function() {
+};

@@ -3,4 +3,10 @@ describe("Stopwatch", function() {
 	beforeEach(function() {
 		stopwatch = new Stopwatch();
 	});
+	
+	describe('count up stopwatch', function() {
+		it('should have prototype Stopwatch defined', function () {
+			expect(Stopwatch).toBeDefined();
+		});
+	});
 });
