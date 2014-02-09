@@ -20,5 +20,10 @@ describe("Stopwatch", function() {
 		it('should have a pointer time string in the HTML document', function() {
 			expect(stopwatch.timeString).toBeDefined();
 		});
+		
+		it('should start increasing the stopWatch value', function() {
+			var output = '00:00:00';			
+			expect(stopwatch.timeValue()).toEqual(output);
+		});
 	});
 });
