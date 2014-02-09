@@ -17,8 +17,8 @@ describe("Stopwatch", function() {
 			expect(stopwatch.startPauseButton).toBeDefined();
 		});
 		
-		it('should have a time hours variable defined', function() {
-			expect(stopwatch.timeHoursString).toBeDefined();
+		it('should have a pointer time string in the HTML document', function() {
+			expect(stopwatch.timeString).toBeDefined();
 		});
 	});
 });
