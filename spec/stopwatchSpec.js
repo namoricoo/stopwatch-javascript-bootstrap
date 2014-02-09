@@ -12,5 +12,9 @@ describe("Stopwatch", function() {
 		it('should know if the timer is running', function() {
 			expect(stopwatch.isRunning).toBeDefined();
 		});
+		
+		it('should have a start Pause Button variable', function() {
+			expect(stopwatch.startPauseButton).toBeDefined();
+		});
 	});
 });
