@@ -16,5 +16,9 @@ describe("Stopwatch", function() {
 		it('should have a start Pause Button variable', function() {
 			expect(stopwatch.startPauseButton).toBeDefined();
 		});
+		
+		it('should have a time hours variable defined', function() {
+			expect(stopwatch.timeHoursString).toBeDefined();
+		});
 	});
 });
