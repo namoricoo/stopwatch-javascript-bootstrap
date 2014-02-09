@@ -10,7 +10,7 @@ describe("Stopwatch", function() {
 		});
 
 		it('should know if the timer is running', function() {
-			expect(Stopwatch.isRunning).toBeDefined();
+			expect(stopwatch.isRunning).toBeDefined();
 		});
 	});
 });
