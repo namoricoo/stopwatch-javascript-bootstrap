@@ -5,7 +5,7 @@ var Stopwatch = function() {
 	this.setTimeValue('00:00:00');
 };
 
-Stopwatch.prototype.stopWatch = function() {
+Stopwatch.prototype.countUp = function() {
 	if(this.isRunning) {
 		this.pause();
 	}else {
@@ -18,7 +18,7 @@ Stopwatch.prototype.start = function() {
 	this.setButtonText('Pause');
 };
 
-Stopwatch.prototype.start = function() {
+Stopwatch.prototype.pause = function() {
 	this.isRunning = false;
 	this.setButtonText('Play');
 };	

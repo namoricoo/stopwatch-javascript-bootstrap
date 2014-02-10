@@ -18,11 +18,18 @@
   <script src="spec/stopwatchSpec.js"></script>
   
 </head>
-<body>
-	<p id="timeString" class="timeString">0</p>
-		<div id="controls">
-			<button id="startPauseButton" onclick="stopWatch()">Start</button>
-			<!-- <button onclick="reset()">Reset</button> -->
-		</div>
-</body>
+	<body>
+		<p id="timeString" class="timeString">0</p>
+			<div id="controls">
+				<button id="startPauseButton" onclick="stopWatch()">Start</button>
+				<!-- <button onclick="reset()">Reset</button> -->
+			</div>
+	</body>
+	<script>
+		function stopWatch() {
+			var stopwatch;
+			stopwatch = new Stopwatch();
+			stopwatch.countUp();
+		}
+	</script>
 </html>
