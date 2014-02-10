@@ -48,6 +48,12 @@ Stopwatch.prototype.formatTime = function(timeInt) {
     return timeInt;
 };
 
+Stopwatch.prototype.getMinutes = function(currentTime) {
+	var minutes;
+	minutes = Math.floor(currentTime/10/60);
+	return formatTime(minutes);	
+};
+
 // Stopwatch.prototype.increaseTime = function() {
 	// if(this.isRunning) {
 		// setTimeout(function() {

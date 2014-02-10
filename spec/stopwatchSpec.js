@@ -46,7 +46,7 @@ describe("Stopwatch", function() {
 		it('should  be able to format time less than 10 to 2 digit format', function() {
 			var input, output;
 			input = 9;
-			output = '09';			
+			output = '09';		
 			expect(stopwatch.formatTime(input)).toEqual(output);
 		});
 	});
