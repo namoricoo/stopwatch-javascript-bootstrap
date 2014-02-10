@@ -1,6 +1,6 @@
 var Stopwatch = function() {
 	this.isRunning = false;
-	this.startPauseButton = document.getElementById("startPauseButton");
+	this.startPauseButton = document.getElementById("startPauseButton");	
 	this.timeString = document.getElementById("timeString");	
 	this.setTimeValue('00:00:00');
 };
@@ -14,8 +14,11 @@ Stopwatch.prototype.countUp = function() {
 };
 
 Stopwatch.prototype.startUp = function() {
-	this.isRunning = true;	
+	var initialTime;
+	this.isRunning = true;
+	initialTime = 0;
 	this.setButtonText('Pause');
+	this.increaseTime(initialTime);
 };
 
 Stopwatch.prototype.pause = function() {
@@ -49,15 +52,46 @@ Stopwatch.prototype.formatTime = function(timeInt) {
 };
 
 Stopwatch.prototype.getMinutes = function(currentTime) {
-	var minutes;
+	var minutes;	
 	minutes = Math.floor(currentTime/10/60);
-	return formatTime(minutes);	
+	minutes = this.formatTime(minutes);
+	return minutes;
 };
 
-// Stopwatch.prototype.increaseTime = function() {
-	// if(this.isRunning) {
-		// setTimeout(function() {
-// 			
-		 // }, 100); // wait 10th of 1 second	
-	// }
-// };
+Stopwatch.prototype.getSeconds = function(currentTime) {
+	var seconds;
+	seconds = Math.floor(currentTime/10);
+	return this.formatTime(seconds);	
+};
+
+Stopwatch.prototype.getTenthOfSecond = function(currentTime) {
+	var tenthOfSecond;
+	tenthOfSecond = currentTime % 60;
+	return this.formatTime(tenthOfSecond);	
+};
+
+Stopwatch.prototype.formatOutput = function(minutes,seconds,tenthOfSecond) {
+	var stopwatchString;
+	stopwatchString = minutes + ":" + seconds + ":" + tenthOfSecond;	
+	return stopwatchString;
+};
+
+Stopwatch.prototype.increaseTime = function(initialTime) {
+	var minutes, seconds, tenthOfSecond, outputText;
+	console.log("this.isRunning="+this.isRunning);
+	if(this.isRunning == true) {
+		setTimeout(function() {
+			console.log("-----running---");
+			initialTime += 1;
+			console.log("initialTime= "+initialTime);
+			minutes = this.getMinutes(initialTime);
+			console.log("minutes="+minutes);
+			seconds = this.getSeconds(initialTime);
+			tenthOfSecond = this.getTenthOfSecond(initialTime);
+			outputText = this.formatOutput(minutes,seconds,tenthOfSecond);
+			console.log("outputText="+outputText);
+			this.setTimeValue(outputText);
+			this.increaseTime();
+		}, 100); // wait 10th of 1 second
+	}
+};

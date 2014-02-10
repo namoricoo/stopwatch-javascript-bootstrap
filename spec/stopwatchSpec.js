@@ -49,5 +49,32 @@ describe("Stopwatch", function() {
 			output = '09';		
 			expect(stopwatch.formatTime(input)).toEqual(output);
 		});
+		
+		it('should  be able to get minute', function() {
+			var input, output;
+			input = 1;
+			output = '00';
+			expect(stopwatch.getMinutes(input)).toEqual(output);
+		});
+		
+		it('should  be able to get seconds', function() {
+			var input, output;
+			input = 1;
+			output = '00';
+			expect(stopwatch.getSeconds(input)).toEqual(output);
+		});
+		
+		it('should  be able to get Tenth Of a Second', function() {
+			var input, output;
+			input = 1;
+			output = '01';
+			expect(stopwatch.getTenthOfSecond(input)).toEqual(output);
+		});
+		
+		// it('should increase current Time', function() {					
+			// output = '00:00:00';
+			// stopwatch.increaseTime();
+			// expect(stopwatch.timeValue()).not.toEqual(output);
+		// });
 	});
 });
