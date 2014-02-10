@@ -1,7 +1,8 @@
 var Stopwatch = function() {
 	this.isRunning = false;
 	this.startPauseButton = document.getElementById("startPauseButton");	
-	this.timeString = document.getElementById("timeString");	
+	this.timeString = document.getElementById("timeString");
+	this.timeInt = 0;
 	this.setTimeValue('00:00:00');
 };
 
@@ -13,12 +14,10 @@ Stopwatch.prototype.countUp = function() {
 	}
 };
 
-Stopwatch.prototype.startUp = function() {
-	var initialTime;
-	this.isRunning = true;
-	initialTime = 0;
+Stopwatch.prototype.startUp = function() {	
+	this.isRunning = true;	
 	this.setButtonText('Pause');
-	this.increaseTime(initialTime);
+	this.increaseTime();
 };
 
 Stopwatch.prototype.pause = function() {
@@ -76,22 +75,18 @@ Stopwatch.prototype.formatOutput = function(minutes,seconds,tenthOfSecond) {
 	return stopwatchString;
 };
 
-Stopwatch.prototype.increaseTime = function(initialTime) {
-	var minutes, seconds, tenthOfSecond, outputText;
-	console.log("this.isRunning="+this.isRunning);
+Stopwatch.prototype.increaseTime = function() {
+	var minutes, seconds, tenthOfSecond, outputText, self;
+	self = this;	
 	if(this.isRunning == true) {
-		setTimeout(function() {
-			console.log("-----running---");
-			initialTime += 1;
-			console.log("initialTime= "+initialTime);
-			minutes = this.getMinutes(initialTime);
-			console.log("minutes="+minutes);
-			seconds = this.getSeconds(initialTime);
-			tenthOfSecond = this.getTenthOfSecond(initialTime);
-			outputText = this.formatOutput(minutes,seconds,tenthOfSecond);
-			console.log("outputText="+outputText);
-			this.setTimeValue(outputText);
-			this.increaseTime();
+		setTimeout(function() {			
+			self.timeInt += 1;			
+			minutes = self.getMinutes(self.timeInt);						
+			seconds = self.getSeconds(self.timeInt);
+			tenthOfSecond = self.getTenthOfSecond(self.timeInt);			
+			outputText = self.formatOutput(minutes,seconds,tenthOfSecond);
+			self.setTimeValue(outputText);
+			self.increaseTime();
 		}, 100); // wait 10th of 1 second
 	}
 };
