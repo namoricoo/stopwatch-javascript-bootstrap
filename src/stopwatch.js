@@ -29,6 +29,7 @@ Stopwatch.prototype.reset = function() {
 	this.isRunning = false;
 	this.setButtonText('Start');
 	this.setTimeValue('00:00:00');
+	this.timeInt = 0;
 };	
 
 Stopwatch.prototype.setButtonText = function(buttonText) {
