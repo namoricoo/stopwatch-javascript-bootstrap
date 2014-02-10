@@ -25,5 +25,13 @@ describe("Stopwatch", function() {
 			var output = '00:00:00';			
 			expect(stopwatch.timeValue()).toEqual(output);
 		});
+		
+		it('should be able to modify current time value', function() {
+			var input, output;
+			input = '00:00:02';
+			output = '00:00:02';
+			stopwatch.setTimeValue(input);	
+			expect(stopwatch.timeValue()).toEqual(output);
+		});
 	});
 });
