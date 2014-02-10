@@ -9,11 +9,11 @@ Stopwatch.prototype.countUp = function() {
 	if(this.isRunning) {
 		this.pause();
 	}else {
-		this.start();
+		this.startUp();
 	}
 };
 
-Stopwatch.prototype.start = function() {
+Stopwatch.prototype.startUp = function() {
 	this.isRunning = true;	
 	this.setButtonText('Pause');
 };
@@ -22,6 +22,7 @@ Stopwatch.prototype.pause = function() {
 	this.isRunning = false;
 	this.setButtonText('Start');
 };
+
 Stopwatch.prototype.reset = function() {
 	this.isRunning = false;
 	this.setButtonText('Start');
@@ -38,6 +39,13 @@ Stopwatch.prototype.timeValue = function() {
 
 Stopwatch.prototype.setTimeValue = function(timeString) {
 	this.timeString.innerHTML = timeString; 
+};
+
+Stopwatch.prototype.formatTime = function(timeInt) {
+	if(timeInt < 10) {
+       timeInt = "0" + timeInt;
+    }
+    return timeInt;
 };
 
 // Stopwatch.prototype.increaseTime = function() {
