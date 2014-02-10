@@ -33,5 +33,14 @@ describe("Stopwatch", function() {
 			stopwatch.setTimeValue(input);	
 			expect(stopwatch.timeValue()).toEqual(output);
 		});
+		
+		it('should be able to reset stopwatch', function() {
+			var input, output;
+			input = '00:00:02';
+			output = '00:00:00';
+			stopwatch.setTimeValue(input);
+			stopwatch.reset();
+			expect(stopwatch.timeValue()).toEqual(output);
+		});
 	});
 });
