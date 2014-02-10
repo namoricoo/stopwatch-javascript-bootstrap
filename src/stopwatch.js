@@ -20,7 +20,12 @@ Stopwatch.prototype.start = function() {
 
 Stopwatch.prototype.pause = function() {
 	this.isRunning = false;
-	this.setButtonText('Play');
+	this.setButtonText('Start');
+};
+Stopwatch.prototype.reset = function() {
+	this.isRunning = false;
+	this.setButtonText('Start');
+	this.setTimeValue('00:00:00');
 };	
 
 Stopwatch.prototype.setButtonText = function(buttonText) {

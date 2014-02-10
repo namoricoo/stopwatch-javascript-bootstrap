@@ -21,15 +21,19 @@
 	<body>
 		<p id="timeString" class="timeString">0</p>
 			<div id="controls">
-				<button id="startPauseButton" onclick="stopWatch()">Start</button>
-				<!-- <button onclick="reset()">Reset</button> -->
+				<button id="startPauseButton" onclick="startStopWatchUp()">Start</button>
+				<button onclick="resetStopWatch()">Reset</button>
 			</div>
 	</body>
 	<script>
-		function stopWatch() {
-			var stopwatch;
-			stopwatch = new Stopwatch();
+		var stopwatch;
+		stopwatch = new Stopwatch();
+		function startStopWatchUp() {
 			stopwatch.countUp();
+		}
+		
+		function resetStopWatch() {
+			stopwatch.reset();
 		}
 	</script>
 </html>
