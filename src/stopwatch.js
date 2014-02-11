@@ -14,6 +14,10 @@ Stopwatch.prototype.countUp = function() {
 	}
 };
 
+Stopwatch.prototype.running = function(isRunning) {
+	this.isRunning = isRunning;
+};
+
 Stopwatch.prototype.startUp = function() {	
 	this.isRunning = true;	
 	this.setButtonText('Pause');

@@ -21,7 +21,7 @@ describe("Stopwatch", function() {
 			expect(stopwatch.timeString).toBeDefined();
 		});
 		
-		it('should start increasing the stopWatch value', function() {
+		it('should return time string value', function() {
 			var output = '00:00:00';			
 			expect(stopwatch.timeValue()).toEqual(output);
 		});
@@ -64,6 +64,12 @@ describe("Stopwatch", function() {
 			expect(stopwatch.getSeconds(input)).toEqual(output);
 		});
 		
+		// it('should increase current Time', function() {					
+			// output = '00:00:00';
+			// stopwatch.running(true);
+			// stopwatch.increaseTime();			
+		// });
+		
 		it('should  be able to get Tenth Of a Second', function() {
 			var input, output;
 			input = 1;
@@ -71,10 +77,6 @@ describe("Stopwatch", function() {
 			expect(stopwatch.getTenthOfSecond(input)).toEqual(output);
 		});
 		
-		// it('should increase current Time', function() {					
-			// output = '00:00:00';
-			// stopwatch.increaseTime();
-			// expect(stopwatch.timeValue()).not.toEqual(output);
-		// });
+		
 	});
 });
